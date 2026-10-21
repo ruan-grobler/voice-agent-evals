@@ -45,7 +45,7 @@ live: ## One live run of v2, no cassettes written (needs ANTHROPIC_API_KEY)
 	$(BIN)/vae run --agent v2 --mode live --baseline baselines/v2.json
 
 calibrate: ## Agreement of the blind grading pass with the labels
-	$(BIN)/vae calibrate --verdicts calibration/blind-pass-1/verdicts.json
+	$(BIN)/vae calibrate --verdicts calibration/blind-pass-2/verdicts.json
 
 calibrate-live: ## Agreement of the live judge model with the labels (needs ANTHROPIC_API_KEY)
 	$(BIN)/vae calibrate --live

@@ -29,4 +29,10 @@ Regression tests for AI receptionists: 15 caller scenarios, code checks plus an 
 
 ## Secret scan
 
-SECRET_SCAN_RESULT
+Method: regex scan of every commit's patch on all branches (`make secret-scan`, `scripts/secret_scan.py`), because gitleaks is not installed on the build machine. Patterns: Anthropic, OpenAI style, AWS, GitHub, Slack, Google, Stripe live and Twilio keys, private key blocks, and generic `api_key` / `secret` / `token` / `password` assignments.
+
+Result on the final history (6 commits, 21 October 2026): **0 findings.**
+
+Positive control: the same script run on a throwaway repo with a planted, randomly generated fake `sk-ant-` string reported 1 finding (redacted), so the scan is not silently blind.
+
+The test suite also scans the working tree for the same patterns on every run (`tests/integration/test_repo_hygiene.py`), and checks that `.env` is not tracked and `.env.example` holds no values. No real key was read, printed or written while building this repo.
