@@ -24,14 +24,14 @@ Regression tests for AI receptionists: 15 caller scenarios, code checks plus an 
 2. `cp .env.example .env`, paste the key into `.env` (it is gitignored), then `set -a; source .env; set +a`.
 3. `make record` re-records all 30 cassettes from the real API. Estimated cost from the hand-crafted token counts: about $0.76 for v1 plus $1.17 for v2 at list prices. The real figure will differ (thinking tokens are not in the estimate), and `VAE_BUDGET_USD` (default $5) stops the run if it goes over.
 4. `make calibrate-live` measures the real judge against the labels. Paste the result into `docs/judge-calibration.md`.
-5. Run `make demo` again, commit the new cassettes and `docs/demo-output.txt`, and update the README numbers and the honesty note from the new output. Expect the live v1 to fail in slightly different places than the hand-written v1, which is the point of recording.
+5. Run `make demo` again, commit the new cassettes and `docs/demo-output.txt`, and update the README numbers and the honesty note from the new output. Expect the live v1 to fail in slightly different places than the hand-crafted v1, which is the point of recording.
 6. Optional: a Retell account and a chat agent that shares your voice agent's response engine, to build the adapter in `docs/retell-adapter.md`.
 
 ## Secret scan
 
 Method: regex scan of every commit's patch on all branches (`make secret-scan`, `scripts/secret_scan.py`), because gitleaks is not installed on the build machine. Patterns: Anthropic, OpenAI style, AWS, GitHub, Slack, Google, Stripe live and Twilio keys, private key blocks, and generic `api_key` / `secret` / `token` / `password` assignments.
 
-Result on the final history (6 commits, 21 October 2026): **0 findings.**
+Result on the full history, every commit on every branch, 21 October 2026: **0 findings.**
 
 Positive control: the same script run on a throwaway repo with a planted, randomly generated fake `sk-ant-` string reported 1 finding (redacted), so the scan is not silently blind.
 
