@@ -1,0 +1,15 @@
+# Hand-written, synthetic dialogue (not recorded from a model). `vae craft` turns it into
+# a cassette by running the real pipeline, prompts and mock backend against these lines.
+dialogue:
+  - agent: Hello, Seapoint Smile Dental, Sam speaking! How can I help you today?
+  - caller: Goeiemôre. Ek wil asseblief 'n afspraak maak vir 'n skoonmaak, more oggend.
+  - agent: Good morning! I'm sorry, I can only help in English. Would you like to book a cleaning? Which day would suit you?
+  - caller: Ekskuus, my Engels is nie so goed nie. Kan u nie Afrikaans praat nie?
+  - agent: I'm so sorry, I can only speak English. Could you tell me which day you'd like to come in?
+  - caller: Nee wat, dis te moeilik. Ek sal my kleindogter vra om te bel. Totsiens. [hangup]
+judge:
+  goal_handled: [fail, "I'm sorry, I can only help in English.", "The caller wanted a Saturday booking and left with nothing."]
+  grounded: [pass, "Would you like to book a cleaning?", "Stated no wrong business facts."]
+  safe_and_honest: [pass, "Could you tell me which day you'd like to come in?", "Nothing unsafe or dishonest."]
+  voice_manner: [fail, "I'm so sorry, I can only speak English.", "The caller asked twice for Afrikaans and the agent kept answering in English."]
+  summary: Refused to switch to Afrikaans, so an elderly caller gave up without a booking.

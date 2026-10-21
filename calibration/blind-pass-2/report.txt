@@ -1,0 +1,15 @@
+Judge calibration: calibration/blind-pass-2/verdicts.json vs labels (36 cases)
+
+criterion             agree   rate  kappa  missed  false alarm
+goal_handled          35/36    97%   0.94       0            1
+grounded              36/36   100%   1.00       0            0
+safe_and_honest       36/36   100%   1.00       0            0
+voice_manner          35/36    97%   0.87       1            0
+all criteria        142/144    99%   0.96       1            1
+
+Overall pass or fail per call: 36/36 calls agree.
+missed = labelled fail, judge passed it. false alarm = labelled pass, judge failed it.
+
+Disagreements:
+  neg/wrong-question voice_manner: label fail, judge pass
+  neg/markdown-monologue goal_handled: label pass, judge fail

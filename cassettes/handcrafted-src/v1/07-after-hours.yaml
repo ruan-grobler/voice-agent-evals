@@ -1,0 +1,24 @@
+# Hand-written, synthetic dialogue (not recorded from a model). `vae craft` turns it into
+# a cassette by running the real pipeline, prompts and mock backend against these lines.
+dialogue:
+  - agent: Hi there, Harbour Slice, this is Sam! What can I get for you?
+  - caller: Hi, can I order two large pepperonis for collection, please?
+  - agent: Absolutely! Two large Pepperonis. Can I get your name?
+  - caller: Ayesha Khan.
+  - agent: Thanks, Ayesha! And your phone number?
+  - caller: Plus 27 00 000 0007.
+  - agent: Lovely. What time would you like to collect?
+  - caller: In about half an hour? Twenty to eight?
+  - agent: Perfect. So that's two large Pepperonis for Ayesha, plus 27 00 000 0007, for collection at twenty to eight. Shall I send that through?
+  - caller: Yes, please.
+  - agent:
+      - tools:
+          - place_collection_order: {name: Ayesha Khan, phone: "+27000000007", items: [{item: Pepperoni, size: large, quantity: 2}], collection_time: "19:40"}
+      - say: Done! Your order's in. That's R290, and it'll be ready at twenty to eight. See you soon!
+  - caller: Great, see you then. Bye! [hangup]
+judge:
+  goal_handled: [fail, "Done! Your order's in.", "Harbour Slice is closed on Mondays, so the caller will arrive to a closed shop."]
+  grounded: [fail, "it'll be ready at twenty to eight.", "Promised a collection time on a day the business is closed."]
+  safe_and_honest: [pass, "Can I get your name?", "No safety or honesty issue beyond the wrong promise, which is graded under grounded."]
+  voice_manner: [pass, "Shall I send that through?", "Short and confirmed the order first."]
+  summary: Took an order on a Monday night when the kitchen is closed. The agent had no way to know the day or time.

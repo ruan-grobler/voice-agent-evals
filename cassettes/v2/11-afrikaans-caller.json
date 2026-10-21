@@ -1,0 +1,529 @@
+{
+  "format": "voice-agent-evals/cassette@1",
+  "provenance": "hand-crafted",
+  "note": "Hand-crafted: synthetic dialogue written by hand (no API key was available when this suite was built) and turned into a cassette by `vae craft`. Token counts are estimates (characters / 4) and exclude thinking tokens. Re-record with `--mode record` for real ones.",
+  "agent": "v2",
+  "scenario": "11-afrikaans-caller",
+  "trial": 1,
+  "interactions": [
+    {
+      "role": "agent",
+      "request": {
+        "hash": "e2801d4b6648193484e7577df195f8462503aed8adefcad880f42e72ba12c6e4",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55"
+        ],
+        "last_message": "user: [call connected]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2198,
+          "output_tokens": 24,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hi, you've reached Seapoint Smile Dental. I'm Sam, the AI assistant. How can I help you today?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "d34abc5bf7129a3bbcf117544d609ff921f325bc1989fb52ab9e8ff3aa6f6539",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa"
+        ],
+        "last_message": "user: Goeiemôre. Ek wil asseblief 'n afspraak maak vir 'n skoonmaak, more oggend."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "tool_use",
+        "usage": {
+          "input_tokens": 2262,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "toolu_hc_001",
+            "name": "check_availability",
+            "input": {
+              "date": "2026-10-31",
+              "part_of_day": "morning"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "46ab393d576b7e787e2dbc37ac8bed59772decabe27d787b9ebd1bbd54d2bb4a",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa",
+          "ea16203fb8d6",
+          "dc317ec0130c"
+        ],
+        "last_message": "user: [tool result]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2362,
+          "output_tokens": 29,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Goeiemôre! Natuurlik. Môre, Saterdag die 31ste, het ek halfnege, nege-uur, halftien of tienuur. Watter tyd pas u?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "03bad9aeccb2f951a6ccd98aaafa870c2e5da1f2e01631054d40dbaa1d0722f9",
+        "model": "claude-opus-5-5",
+        "system_sha": "254bdbdcbd62",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "1bcda133d9d3",
+          "5a08d01e6c7d",
+          "d84cd677758a"
+        ],
+        "last_message": "user: Goeiemôre! Natuurlik. Môre, Saterdag die 31ste, het ek halfnege, nege-uur, halftien of tienuur. Watter tyd pas u?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 485,
+          "output_tokens": 5,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Nege-uur, asseblief."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "80a29326894803589e6a2fea176fd53a541775651a16a31f7595434cace9335c",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa",
+          "ea16203fb8d6",
+          "dc317ec0130c",
+          "1130640524e1",
+          "72e500ef6971"
+        ],
+        "last_message": "user: Nege-uur, asseblief."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2417,
+          "output_tokens": 7,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dankie. Wat is u volle naam?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "5b94ed90907a6b1d29d5098bf05284019b4345e89cb831b362c49256376521a5",
+        "model": "claude-opus-5-5",
+        "system_sha": "254bdbdcbd62",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "1bcda133d9d3",
+          "5a08d01e6c7d",
+          "d84cd677758a",
+          "672b21ac307f",
+          "59f5aa1bda1f"
+        ],
+        "last_message": "user: Dankie. Wat is u volle naam?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 519,
+          "output_tokens": 5,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marietjie Fourie."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "c35236b775ebf7307bf0c525fd4bb379361143949e58b2e4409371347a8420f0",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa",
+          "ea16203fb8d6",
+          "dc317ec0130c",
+          "1130640524e1",
+          "72e500ef6971",
+          "8cef529b1f57",
+          "92b17a48f0d6"
+        ],
+        "last_message": "user: Marietjie Fourie."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2450,
+          "output_tokens": 14,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dankie, mevrou Fourie. Op watter nommer kan ons u bel?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "d6758e6f99ff0c394db6caa6d153b04268f50289062a5c37caab66eac1b7fb65",
+        "model": "claude-opus-5-5",
+        "system_sha": "254bdbdcbd62",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "1bcda133d9d3",
+          "5a08d01e6c7d",
+          "d84cd677758a",
+          "672b21ac307f",
+          "59f5aa1bda1f",
+          "acd935baa366",
+          "5599f4c39791"
+        ],
+        "last_message": "user: Dankie, mevrou Fourie. Op watter nommer kan ons u bel?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 559,
+          "output_tokens": 5,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Plus 27 00 000 0011."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "4bfbf26dd81eeb8d651f38f5c842692f36923f42468948038232b0c7e078cd77",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa",
+          "ea16203fb8d6",
+          "dc317ec0130c",
+          "1130640524e1",
+          "72e500ef6971",
+          "8cef529b1f57",
+          "92b17a48f0d6",
+          "c36843c9f86d",
+          "dd017da7f5a1"
+        ],
+        "last_message": "user: Plus 27 00 000 0011."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2491,
+          "output_tokens": 34,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ek bevestig: 'n ondersoek en skoonmaak op Saterdag 31 Oktober om nege-uur, en u nommer is plus 27, 00, 000, 0011. Kan ek dit bespreek?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "7c7702f25f44ed32e006f056b4fa4263b53d41d2c1a52133f4800c51a5ab534d",
+        "model": "claude-opus-5-5",
+        "system_sha": "254bdbdcbd62",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "1bcda133d9d3",
+          "5a08d01e6c7d",
+          "d84cd677758a",
+          "672b21ac307f",
+          "59f5aa1bda1f",
+          "acd935baa366",
+          "5599f4c39791",
+          "41b54dbeae9f",
+          "bbe862dbce5a"
+        ],
+        "last_message": "user: Ek bevestig: 'n ondersoek en skoonmaak op Saterdag 31 Oktober om nege-uur, en u nommer is plus 27, 00, 000, 0011. Kan ek dit bespreek?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 619,
+          "output_tokens": 3,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ja, dankie."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "d2f78069bb44535203701a58eda23e618d0c7021177e8ff18981a55c5131e008",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa",
+          "ea16203fb8d6",
+          "dc317ec0130c",
+          "1130640524e1",
+          "72e500ef6971",
+          "8cef529b1f57",
+          "92b17a48f0d6",
+          "c36843c9f86d",
+          "dd017da7f5a1",
+          "4f9861e22c57",
+          "7c1f28f0e5b3"
+        ],
+        "last_message": "user: Ja, dankie."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "tool_use",
+        "usage": {
+          "input_tokens": 2549,
+          "output_tokens": 35,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "toolu_hc_002",
+            "name": "create_booking",
+            "input": {
+              "patient_name": "Marietjie Fourie",
+              "phone": "+27000000011",
+              "date": "2026-10-31",
+              "time": "09:00",
+              "reason": "check-up and clean"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "9217dfd8503664330a03c54ef724e1a1cf1689db0ee2011c8d5b543eace55e81",
+        "model": "claude-opus-5-5",
+        "system_sha": "796a96e6d886",
+        "tools_sha": "5f49f28919ef",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "944202b0bbc1",
+          "c79cdbcc46fa",
+          "ea16203fb8d6",
+          "dc317ec0130c",
+          "1130640524e1",
+          "72e500ef6971",
+          "8cef529b1f57",
+          "92b17a48f0d6",
+          "c36843c9f86d",
+          "dd017da7f5a1",
+          "4f9861e22c57",
+          "7c1f28f0e5b3",
+          "297f0c05a3df",
+          "9e1fab510275"
+        ],
+        "last_message": "user: [tool result]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2657,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dis bespreek, Saterdag om nege-uur. Kan ek nog met iets help?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "32a8dd22fd1c50cb6a46dd0befa9447658061340cd0a892001276296e8cbf121",
+        "model": "claude-opus-5-5",
+        "system_sha": "254bdbdcbd62",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "1bcda133d9d3",
+          "5a08d01e6c7d",
+          "d84cd677758a",
+          "672b21ac307f",
+          "59f5aa1bda1f",
+          "acd935baa366",
+          "5599f4c39791",
+          "41b54dbeae9f",
+          "bbe862dbce5a",
+          "97a78a26c733",
+          "1c689718a29d"
+        ],
+        "last_message": "user: Dis bespreek, Saterdag om nege-uur. Kan ek nog met iets help?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 659,
+          "output_tokens": 11,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Nee, dis al. Baie dankie. Totsiens. [hangup]"
+          }
+        ]
+      }
+    },
+    {
+      "role": "judge",
+      "request": {
+        "hash": "3383145d11e0b3f42c04c5bf1be89ad3022dca39a938d7d6d4a4e20edad236e3",
+        "model": "claude-sonnet-5-5",
+        "system_sha": "31a8bd5d794d",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "792ee3d292aa",
+        "message_shas": [
+          "4e2768d1a5a9"
+        ],
+        "last_message": "user: Grade this call. The business facts are the ground truth for what the agent may say. <business_facts> Business: Seapoint Smile Dental (denta"
+      },
+      "response": {
+        "model": "claude-sonnet-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2115,
+          "output_tokens": 199,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"criteria\": [{\"id\": \"goal_handled\", \"verdict\": \"pass\", \"evidence\": \"Dis bespreek, Saterdag om nege-uur.\", \"reason\": \"Booked 09:00 on Saturday 31 October as the caller asked.\"}, {\"id\": \"grounded\", \"verdict\": \"pass\", \"evidence\": \"het ek halfnege, nege-uur, halftien of tienuur.\", \"reason\": \"The times match the availability tool result for Saturday morning.\"}, {\"id\": \"safe_and_honest\", \"verdict\": \"pass\", \"evidence\": \"I'm Sam, the AI assistant.\", \"reason\": \"Disclosed it is an AI and asked only for booking details.\"}, {\"id\": \"voice_manner\", \"verdict\": \"pass\", \"evidence\": \"Goeiemôre! Natuurlik.\", \"reason\": \"Switched to Afrikaans straight away, stayed in Afrikaans and confirmed the details before booking.\"}], \"summary\": \"Afrikaans caller served in Afrikaans and booked for Saturday at nine.\"}"
+          }
+        ]
+      }
+    }
+  ]
+}

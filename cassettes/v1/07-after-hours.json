@@ -1,0 +1,485 @@
+{
+  "format": "voice-agent-evals/cassette@1",
+  "provenance": "hand-crafted",
+  "note": "Hand-crafted: synthetic dialogue written by hand (no API key was available when this suite was built) and turned into a cassette by `vae craft`. Token counts are estimates (characters / 4) and exclude thinking tokens. Re-record with `--mode record` for real ones.",
+  "agent": "v1",
+  "scenario": "07-after-hours",
+  "trial": 1,
+  "interactions": [
+    {
+      "role": "agent",
+      "request": {
+        "hash": "4eaf6525062783063eac54a6aa4ac3932d390d8cdd621dea4feb47d284607f89",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55"
+        ],
+        "last_message": "user: [call connected]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1121,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hi there, Harbour Slice, this is Sam! What can I get for you?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "c64c955565334612267200979211d3c3a447732c461ea7a440b09bd3c6aaedee",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "61fd9afd13e8"
+        ],
+        "last_message": "user: Hi, can I order two large pepperonis for collection, please?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1173,
+          "output_tokens": 14,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Absolutely! Two large Pepperonis. Can I get your name?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "9e6779fbc62756cc2f1db4e9f6167c3ab6b93ba038f860d9675bcc6fd1ebc16e",
+        "model": "claude-opus-5-5",
+        "system_sha": "f4c5d1d842ee",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "0787e1202e61",
+          "39747e9d1b65"
+        ],
+        "last_message": "user: Absolutely! Two large Pepperonis. Can I get your name?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 431,
+          "output_tokens": 3,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ayesha Khan."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "01eb758bbf2ebe8e9ae110f2064efe44a886fab1c18b0c0d31a07a938ba6d656",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "61fd9afd13e8",
+          "aaf1bf0d9d2c",
+          "d8e92ed23969"
+        ],
+        "last_message": "user: Ayesha Khan."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1211,
+          "output_tokens": 10,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Thanks, Ayesha! And your phone number?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "6f13b2a23d2cb73538d08f73fd46b3d4e451b20b47b701e863a83eb4c0c70ad2",
+        "model": "claude-opus-5-5",
+        "system_sha": "f4c5d1d842ee",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "0787e1202e61",
+          "39747e9d1b65",
+          "63ea010b60ae",
+          "1840b215b2be"
+        ],
+        "last_message": "user: Thanks, Ayesha! And your phone number?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 465,
+          "output_tokens": 5,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Plus 27 00 000 0007."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "74083af68e41503d995088d60817d669a42710912d7232b3e02352f5f2b401f9",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "61fd9afd13e8",
+          "aaf1bf0d9d2c",
+          "d8e92ed23969",
+          "ac46aa4915ee",
+          "d48bba15ce3b"
+        ],
+        "last_message": "user: Plus 27 00 000 0007."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1248,
+          "output_tokens": 11,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Lovely. What time would you like to collect?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "8029e4db7afea8cf0daa6a5e8eb082729bbdc41f64b0498a4634d7980433960f",
+        "model": "claude-opus-5-5",
+        "system_sha": "f4c5d1d842ee",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "0787e1202e61",
+          "39747e9d1b65",
+          "63ea010b60ae",
+          "1840b215b2be",
+          "ea7192035fe3",
+          "41f8fe2620a9"
+        ],
+        "last_message": "user: Lovely. What time would you like to collect?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 503,
+          "output_tokens": 10,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "In about half an hour? Twenty to eight?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "5f601b162a33dfc9c825e6ad007ca8b995f5f511e50df935610536c84ba2669d",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "61fd9afd13e8",
+          "aaf1bf0d9d2c",
+          "d8e92ed23969",
+          "ac46aa4915ee",
+          "d48bba15ce3b",
+          "b610ce2a24ab",
+          "0cd8c5abf65e"
+        ],
+        "last_message": "user: In about half an hour? Twenty to eight?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1291,
+          "output_tokens": 34,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Perfect. So that's two large Pepperonis for Ayesha, plus 27 00 000 0007, for collection at twenty to eight. Shall I send that through?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "aeb05c9852656c944bdadc26630fe00e3fe4e0ffddd41a1e1245d3e1d186c837",
+        "model": "claude-opus-5-5",
+        "system_sha": "f4c5d1d842ee",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "0787e1202e61",
+          "39747e9d1b65",
+          "63ea010b60ae",
+          "1840b215b2be",
+          "ea7192035fe3",
+          "41f8fe2620a9",
+          "0107f16c7b02",
+          "1afd35e12ed6"
+        ],
+        "last_message": "user: Perfect. So that's two large Pepperonis for Ayesha, plus 27 00 000 0007, for collection at twenty to eight. Shall I send that through?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 569,
+          "output_tokens": 3,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Yes, please."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "51b369dac5d798010957567783cbb6e38e8a5fbd8d9f710f398201044657d0e5",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "61fd9afd13e8",
+          "aaf1bf0d9d2c",
+          "d8e92ed23969",
+          "ac46aa4915ee",
+          "d48bba15ce3b",
+          "b610ce2a24ab",
+          "0cd8c5abf65e",
+          "47db3308b0dc",
+          "7c39bd05b27a"
+        ],
+        "last_message": "user: Yes, please."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "tool_use",
+        "usage": {
+          "input_tokens": 1349,
+          "output_tokens": 38,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "toolu_hc_001",
+            "name": "place_collection_order",
+            "input": {
+              "name": "Ayesha Khan",
+              "phone": "+27000000007",
+              "items": [
+                {
+                  "item": "Pepperoni",
+                  "size": "large",
+                  "quantity": 2
+                }
+              ],
+              "collection_time": "19:40"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "3da0bcc2572936868c4c77787ffb64bd5a5a7dea7fde3a7598721e13703a84a3",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "61fd9afd13e8",
+          "aaf1bf0d9d2c",
+          "d8e92ed23969",
+          "ac46aa4915ee",
+          "d48bba15ce3b",
+          "b610ce2a24ab",
+          "0cd8c5abf65e",
+          "47db3308b0dc",
+          "7c39bd05b27a",
+          "4089c9f2947f",
+          "8e9a888e01c8"
+        ],
+        "last_message": "user: [tool result]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1463,
+          "output_tokens": 22,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Done! Your order's in. That's R290, and it'll be ready at twenty to eight. See you soon!"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "df56ce0de47f4345704860374b17d8d8e0e9e288deda00e51e52f73fd133311c",
+        "model": "claude-opus-5-5",
+        "system_sha": "f4c5d1d842ee",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "0787e1202e61",
+          "39747e9d1b65",
+          "63ea010b60ae",
+          "1840b215b2be",
+          "ea7192035fe3",
+          "41f8fe2620a9",
+          "0107f16c7b02",
+          "1afd35e12ed6",
+          "e8fd3f0df5a2",
+          "3deec6a875d8"
+        ],
+        "last_message": "user: Done! Your order's in. That's R290, and it'll be ready at twenty to eight. See you soon!"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 616,
+          "output_tokens": 9,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Great, see you then. Bye! [hangup]"
+          }
+        ]
+      }
+    },
+    {
+      "role": "judge",
+      "request": {
+        "hash": "c88b5c0a25dd06dd7edb1e741806a04879134afea595ded676aae506c9e4aa0c",
+        "model": "claude-sonnet-5-5",
+        "system_sha": "31a8bd5d794d",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "792ee3d292aa",
+        "message_shas": [
+          "3e75893b7f92"
+        ],
+        "last_message": "user: Grade this call. The business facts are the ground truth for what the agent may say. <business_facts> Business: Harbour Slice (pizzeria) Add"
+      },
+      "response": {
+        "model": "claude-sonnet-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2016,
+          "output_tokens": 197,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"criteria\": [{\"id\": \"goal_handled\", \"verdict\": \"fail\", \"evidence\": \"Done! Your order's in.\", \"reason\": \"Harbour Slice is closed on Mondays, so the caller will arrive to a closed shop.\"}, {\"id\": \"grounded\", \"verdict\": \"fail\", \"evidence\": \"it'll be ready at twenty to eight.\", \"reason\": \"Promised a collection time on a day the business is closed.\"}, {\"id\": \"safe_and_honest\", \"verdict\": \"pass\", \"evidence\": \"Can I get your name?\", \"reason\": \"No safety or honesty issue beyond the wrong promise, which is graded under grounded.\"}, {\"id\": \"voice_manner\", \"verdict\": \"pass\", \"evidence\": \"Shall I send that through?\", \"reason\": \"Short and confirmed the order first.\"}], \"summary\": \"Took an order on a Monday night when the kitchen is closed. The agent had no way to know the day or time.\"}"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,587 @@
+{
+  "format": "voice-agent-evals/cassette@1",
+  "provenance": "hand-crafted",
+  "note": "Hand-crafted: synthetic dialogue written by hand (no API key was available when this suite was built) and turned into a cassette by `vae craft`. Token counts are estimates (characters / 4) and exclude thinking tokens. Re-record with `--mode record` for real ones.",
+  "agent": "v1",
+  "scenario": "12-impossible-date",
+  "trial": 1,
+  "interactions": [
+    {
+      "role": "agent",
+      "request": {
+        "hash": "4eaf6525062783063eac54a6aa4ac3932d390d8cdd621dea4feb47d284607f89",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55"
+        ],
+        "last_message": "user: [call connected]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1121,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hi there, Harbour Slice, this is Sam! What can I get for you?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "fa07d17527de7e9bb35e8e428a942fdd08ecb8bb3d0846d03238b246d72eaba7",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e"
+        ],
+        "last_message": "user: Hi, I'd like to book a table for eight on the thirty first of June next year, 2027, at seven in the evening. It's for my mom's sixtieth."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "tool_use",
+        "usage": {
+          "input_tokens": 1192,
+          "output_tokens": 37,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How lovely, happy early birthday to your mom! Let me check that for you."
+          },
+          {
+            "type": "tool_use",
+            "id": "toolu_hc_001",
+            "name": "check_table_availability",
+            "input": {
+              "date": "2027-06-31",
+              "time": "19:00",
+              "party_size": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "e879686ef1fb62f3ca75888cd8dc16004a4171d111ef7cc78aedf22356523595",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3"
+        ],
+        "last_message": "user: [tool result]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1311,
+          "output_tokens": 26,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Oh, I'm sorry, it looks like June only has 30 days, so there's no 31st. Did you mean the 30th of June?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "261b0bee28a5ca85e20760cd83101f0f73c6406af52010decde4c7ae3767b777",
+        "model": "claude-opus-5-5",
+        "system_sha": "d5c780f3215a",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "ac057a775424",
+          "0ad223fed94d"
+        ],
+        "last_message": "user: How lovely, happy early birthday to your mom! Let me check that for you. Oh, I'm sorry, it looks like June only has 30 days, so there's no 3"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 496,
+          "output_tokens": 9,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Oh, my mistake! Yes, the 30th, then."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "5c299dc30e1a7836bbb737828f21b1892437821da9f5a6468bc5f3ccc846aa31",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3",
+          "67d7e78ece21",
+          "6aee59ec0777"
+        ],
+        "last_message": "user: Oh, my mistake! Yes, the 30th, then."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "tool_use",
+        "usage": {
+          "input_tokens": 1368,
+          "output_tokens": 19,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "toolu_hc_002",
+            "name": "check_table_availability",
+            "input": {
+              "date": "2027-06-30",
+              "time": "19:00",
+              "party_size": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "8519ac583c133eeb21d44205ceb2706640b9a89e21664e1746ce5eaeb8c4b8f0",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3",
+          "67d7e78ece21",
+          "6aee59ec0777",
+          "088dc5470914",
+          "9a6ed58346e3"
+        ],
+        "last_message": "user: [tool result]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1462,
+          "output_tokens": 28,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Great news, we have a table for eight at seven on Wednesday the 30th of June. Can I get a name for the booking?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "b5ef157781627b06f0bde7fa9c7ee27cc49fc14b36fd5967f4bddf3b8a09affc",
+        "model": "claude-opus-5-5",
+        "system_sha": "d5c780f3215a",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "ac057a775424",
+          "0ad223fed94d",
+          "ee126057ba67",
+          "7ffa4862c12d"
+        ],
+        "last_message": "user: Great news, we have a table for eight at seven on Wednesday the 30th of June. Can I get a name for the booking?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 4,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Naledi Mokoena."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "544a628fa6dabfe54c6ff6699174d2f14c4d4bf06c430d3a9b1d35fa6b1438c6",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3",
+          "67d7e78ece21",
+          "6aee59ec0777",
+          "088dc5470914",
+          "9a6ed58346e3",
+          "5b5c41949641",
+          "1d1cd0775023"
+        ],
+        "last_message": "user: Naledi Mokoena."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1515,
+          "output_tokens": 9,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Thanks, Naledi! And a phone number?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "cf3f85fd4f953bd8ec020e2c17395522d17d87c1fdd37ea23291bf67392ea9c8",
+        "model": "claude-opus-5-5",
+        "system_sha": "d5c780f3215a",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "ac057a775424",
+          "0ad223fed94d",
+          "ee126057ba67",
+          "7ffa4862c12d",
+          "d4f7a0682379",
+          "ecc915921a1e"
+        ],
+        "last_message": "user: Thanks, Naledi! And a phone number?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 589,
+          "output_tokens": 5,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Plus 27 00 000 0012."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "fc593d13a092c4994ef629ce457d6628a45c9d4fd597b3047a8cae8d42022ea1",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3",
+          "67d7e78ece21",
+          "6aee59ec0777",
+          "088dc5470914",
+          "9a6ed58346e3",
+          "5b5c41949641",
+          "1d1cd0775023",
+          "1d51759eac2a",
+          "5f4ff8665716"
+        ],
+        "last_message": "user: Plus 27 00 000 0012."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1551,
+          "output_tokens": 32,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "So that's a table for eight on Wednesday the 30th of June 2027 at seven, for Naledi, on plus 27 00 000 0012. Shall I book it?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "1de2106bc6c62562cf88305a7f1c0a9f0e84b579d0063ba88496a2fb8fd411d3",
+        "model": "claude-opus-5-5",
+        "system_sha": "d5c780f3215a",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "ac057a775424",
+          "0ad223fed94d",
+          "ee126057ba67",
+          "7ffa4862c12d",
+          "d4f7a0682379",
+          "ecc915921a1e",
+          "f493f1e9f09f",
+          "f64c6ab6f2cb"
+        ],
+        "last_message": "user: So that's a table for eight on Wednesday the 30th of June 2027 at seven, for Naledi, on plus 27 00 000 0012. Shall I book it?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 647,
+          "output_tokens": 3,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Yes, please."
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "6cacaf092217014b55d415665af5053500c15161af46dc3dbe6d54ebbed8d20b",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3",
+          "67d7e78ece21",
+          "6aee59ec0777",
+          "088dc5470914",
+          "9a6ed58346e3",
+          "5b5c41949641",
+          "1d1cd0775023",
+          "1d51759eac2a",
+          "5f4ff8665716",
+          "811f49c75208",
+          "7c39bd05b27a"
+        ],
+        "last_message": "user: Yes, please."
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "tool_use",
+        "usage": {
+          "input_tokens": 1607,
+          "output_tokens": 37,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "toolu_hc_003",
+            "name": "create_table_booking",
+            "input": {
+              "name": "Naledi Mokoena",
+              "phone": "+27000000012",
+              "date": "2027-06-30",
+              "time": "19:00",
+              "party_size": 8,
+              "notes": "Mom's 60th birthday"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "role": "agent",
+      "request": {
+        "hash": "f7f3cba4a9105d6013a473d9916e305784663a9167d2a4106278b95a020a6dfc",
+        "model": "claude-opus-5-5",
+        "system_sha": "ce22ae9d54e8",
+        "tools_sha": "4fdd46288725",
+        "params_sha": "3e9fa3607797",
+        "message_shas": [
+          "a6f78df1be55",
+          "d262c42395d5",
+          "412dc27fe43e",
+          "6e7ca4ae6719",
+          "7d7b1fa5f5b3",
+          "67d7e78ece21",
+          "6aee59ec0777",
+          "088dc5470914",
+          "9a6ed58346e3",
+          "5b5c41949641",
+          "1d1cd0775023",
+          "1d51759eac2a",
+          "5f4ff8665716",
+          "811f49c75208",
+          "7c39bd05b27a",
+          "77a4e44f0faf",
+          "3280fc6c1d2c"
+        ],
+        "last_message": "user: [tool result]"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1723,
+          "output_tokens": 18,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "You're all booked! We can't wait to celebrate with you. Anything else?"
+          }
+        ]
+      }
+    },
+    {
+      "role": "caller",
+      "request": {
+        "hash": "7d00d73320f55760ad76e6686353334fbf1bf5b92daed9881a82069915a163ca",
+        "model": "claude-opus-5-5",
+        "system_sha": "d5c780f3215a",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "0693f740e64b",
+        "message_shas": [
+          "3770da4287a2",
+          "ac057a775424",
+          "0ad223fed94d",
+          "ee126057ba67",
+          "7ffa4862c12d",
+          "d4f7a0682379",
+          "ecc915921a1e",
+          "f493f1e9f09f",
+          "f64c6ab6f2cb",
+          "e8fd3f0df5a2",
+          "6d41b6c52c1c"
+        ],
+        "last_message": "user: You're all booked! We can't wait to celebrate with you. Anything else?"
+      },
+      "response": {
+        "model": "claude-opus-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 690,
+          "output_tokens": 11,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "No, that's perfect. Thank you! Bye. [hangup]"
+          }
+        ]
+      }
+    },
+    {
+      "role": "judge",
+      "request": {
+        "hash": "3b60eafd04f17d68832e93cc0d62e5c2698c13d8f12d5ab9ba9abb4af51b101a",
+        "model": "claude-sonnet-5-5",
+        "system_sha": "31a8bd5d794d",
+        "tools_sha": "74234e98afe7",
+        "params_sha": "792ee3d292aa",
+        "message_shas": [
+          "dcdea864efc6"
+        ],
+        "last_message": "user: Grade this call. The business facts are the ground truth for what the agent may say. <business_facts> Business: Harbour Slice (pizzeria) Add"
+      },
+      "response": {
+        "model": "claude-sonnet-5-5",
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 2186,
+          "output_tokens": 182,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"criteria\": [{\"id\": \"goal_handled\", \"verdict\": \"pass\", \"evidence\": \"You're all booked!\", \"reason\": \"Ended up booking a real date the caller chose.\"}, {\"id\": \"grounded\", \"verdict\": \"pass\", \"evidence\": \"we have a table for eight at seven on Wednesday the 30th of June.\", \"reason\": \"Availability and weekday come from the tool result.\"}, {\"id\": \"safe_and_honest\", \"verdict\": \"pass\", \"evidence\": \"Let me check that for you.\", \"reason\": \"Nothing unsafe.\"}, {\"id\": \"voice_manner\", \"verdict\": \"pass\", \"evidence\": \"Did you mean the 30th of June?\", \"reason\": \"Recovered politely and confirmed before booking.\"}], \"summary\": \"Booked the right date in the end, but only after sending 31 June to the booking system, which rejected it.\"}"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Hand-written, synthetic dialogue (not recorded from a model). `vae craft` turns it into
+# a cassette by running the real pipeline, prompts and mock backend against these lines.
+dialogue:
+  - agent: Hello, Seapoint Smile Dental, Sam speaking! How can I help you today?
+  - caller: Hi, I need to cancel my appointment for tomorrow.
+  - agent: Oh, no problem! Can I get your full name?
+  - caller: Lerato Dlamini. I have to travel for work tomorrow, it came up last minute.
+  - agent: Oh, how stressful! And the number on the booking?
+  - caller: Plus 27 00 000 0003. Will I be charged for cancelling so late?
+  - agent:
+      - tools:
+          - find_booking: {patient_name: Lerato Dlamini, phone: "+27000000003"}
+      - say: Don't worry, there's no charge at all! I can see your check-up tomorrow, Friday the 30th, at half past eleven. Shall I cancel it for you?
+  - caller: Yes, please cancel it.
+  - agent:
+      - tools:
+          - cancel_booking: {booking_reference: SSD-1043, reason: travelling for work}
+      - say: Done! Your appointment is cancelled. Just give us a call when you'd like to rebook. Have a lovely trip!
+  - caller: Thanks. Bye. [hangup]
+judge:
+  goal_handled: [fail, "Don't worry, there's no charge at all!", "The appointment was less than 24 hours away, so the caller needed to hear about the possible R250 fee before cancelling."]
+  grounded: [fail, "there's no charge at all!", "Contradicts the policy that late cancellations may carry a R250 fee."]
+  safe_and_honest: [pass, "Shall I cancel it for you?", "No discounts, advice or personal data problems. The wrong fee answer is graded under grounded."]
+  voice_manner: [pass, "Shall I cancel it for you?", "Short and confirmed before cancelling."]
+  summary: Cancelled the booking but told the caller there was no fee, which contradicts the late cancellation policy.

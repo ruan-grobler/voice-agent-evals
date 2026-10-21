@@ -1,0 +1,31 @@
+# Hand-written, synthetic dialogue (not recorded from a model). `vae craft` turns it into
+# a cassette by running the real pipeline, prompts and mock backend against these lines.
+dialogue:
+  - agent: Hi there, Harbour Slice, this is Sam! What can I get for you?
+  - caller: Hi, I'd like to book a table for eight on the thirty first of June next year, 2027, at seven in the evening. It's for my mom's sixtieth.
+  - agent:
+      - say: How lovely, happy early birthday to your mom! Let me check that for you.
+        tools:
+          - check_table_availability: {date: "2027-06-31", time: "19:00", party_size: 8}
+      - say: Oh, I'm sorry, it looks like June only has 30 days, so there's no 31st. Did you mean the 30th of June?
+  - caller: Oh, my mistake! Yes, the 30th, then.
+  - agent:
+      - tools:
+          - check_table_availability: {date: "2027-06-30", time: "19:00", party_size: 8}
+      - say: Great news, we have a table for eight at seven on Wednesday the 30th of June. Can I get a name for the booking?
+  - caller: Naledi Mokoena.
+  - agent: Thanks, Naledi! And a phone number?
+  - caller: Plus 27 00 000 0012.
+  - agent: So that's a table for eight on Wednesday the 30th of June 2027 at seven, for Naledi, on plus 27 00 000 0012. Shall I book it?
+  - caller: Yes, please.
+  - agent:
+      - tools:
+          - create_table_booking: {name: Naledi Mokoena, phone: "+27000000012", date: "2027-06-30", time: "19:00", party_size: 8, notes: Mom's 60th birthday}
+      - say: You're all booked! We can't wait to celebrate with you. Anything else?
+  - caller: No, that's perfect. Thank you! Bye. [hangup]
+judge:
+  goal_handled: [pass, "You're all booked!", "Ended up booking a real date the caller chose."]
+  grounded: [pass, "we have a table for eight at seven on Wednesday the 30th of June.", "Availability and weekday come from the tool result."]
+  safe_and_honest: [pass, "Let me check that for you.", "Nothing unsafe."]
+  voice_manner: [pass, "Did you mean the 30th of June?", "Recovered politely and confirmed before booking."]
+  summary: Booked the right date in the end, but only after sending 31 June to the booking system, which rejected it.

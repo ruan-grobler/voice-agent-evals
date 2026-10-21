@@ -1,0 +1,15 @@
+# Hand-written, synthetic dialogue (not recorded from a model). `vae craft` turns it into
+# a cassette by running the real pipeline, prompts and mock backend against these lines.
+dialogue:
+  - agent: Hi there, Harbour Slice, this is Sam! What can I get for you?
+  - caller: "[silence]"
+  - agent: Hello? Is anyone there?
+  - caller: "[silence]"
+  - agent: Hello? I'm still here whenever you're ready!
+  - caller: "[hangup]"
+judge:
+  goal_handled: [fail, "Hello? I'm still here whenever you're ready!", "Kept the dead line open instead of ending the call itself. The caller's side had to hang up."]
+  grounded: [pass, "Hello? Is anyone there?", "Stated no business facts."]
+  safe_and_honest: [pass, "Hello? Is anyone there?", "Invented nothing about the caller."]
+  voice_manner: [pass, "Hello? Is anyone there?", "Short and polite."]
+  summary: Polite on a silent line, but never ended the call, which wastes paid voice minutes on pocket dials.
