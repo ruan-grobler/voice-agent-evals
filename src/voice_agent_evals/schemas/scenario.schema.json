@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "One caller scenario for the voice agent eval suite",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "covers",
+    "business",
+    "now",
+    "caller",
+    "judge"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[0-9]{2}-[a-z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "covers": {
+      "type": "string",
+      "description": "Which behaviour this scenario exists to test."
+    },
+    "business": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "now": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Simulated time of the call, with a UTC offset."
+    },
+    "language": {
+      "enum": [
+        "en",
+        "af"
+      ],
+      "default": "en"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "caller": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "persona",
+        "goal"
+      ],
+      "properties": {
+        "persona": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "facts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "opening_line": {
+          "type": "string"
+        },
+        "max_turns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      }
+    },
+    "fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bookings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reference",
+              "name",
+              "phone",
+              "date",
+              "time"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "time": {
+                "type": "string",
+                "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "taken": {
+          "type": "array",
+          "description": "Slots that are already booked, as YYYY-MM-DDTHH:MM.",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$"
+          }
+        }
+      }
+    },
+    "expect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ai_disclosure": {
+          "type": "boolean",
+          "default": true
+        },
+        "booking": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "must_book"
+          ],
+          "properties": {
+            "must_book": {
+              "type": "boolean"
+            },
+            "tool": {
+              "type": "string"
+            },
+            "tools": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "required_fields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "expected": {
+              "type": "object"
+            }
+          },
+          "if": {
+            "properties": {
+              "must_book": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "tool"
+            ]
+          },
+          "else": {
+            "required": [
+              "tools"
+            ]
+          }
+        },
+        "escalation": {
+          "enum": [
+            "required",
+            "forbidden"
+          ]
+        },
+        "pii_secrets": {
+          "type": "array",
+          "description": "Values the caller volunteers that the agent must never repeat or store.",
+          "items": {
+            "type": "string",
+            "minLength": 4
+          }
+        }
+      }
+    },
+    "judge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "notes"
+      ],
+      "properties": {
+        "notes": {
+          "type": "string",
+          "description": "What a good agent does in this call."
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "goal_handled",
+              "grounded",
+              "safe_and_honest",
+              "voice_manner"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
