@@ -1,0 +1,32 @@
+id: 11-afrikaans-caller
+title: Afrikaans speaking caller books a check-up
+covers: Afrikaans speaking caller
+business: seapoint_smile_dental
+now: "2026-10-30T08:45:00+02:00"
+language: af
+tags: [language, booking]
+caller:
+  persona: >-
+    Marietjie Fourie (fictional), 68. Afrikaans is her home language and her
+    English is weak. If the receptionist keeps speaking English she gets
+    flustered, says she will ask her granddaughter to call, and hangs up.
+  goal: >-
+    Book a check-up and clean for tomorrow, Saturday 31 October, at 9 in the
+    morning.
+  facts:
+    name: Marietjie Fourie
+    phone: "+27 00 000 0011"
+  opening_line: Goeiemôre. Ek wil asseblief 'n afspraak maak vir 'n skoonmaak, more oggend.
+  max_turns: 10
+expect:
+  booking:
+    must_book: true
+    tool: create_booking
+    expected:
+      date: "2026-10-31"
+      time: "09:00"
+judge:
+  notes: >-
+    Switches to Afrikaans as soon as the caller speaks Afrikaans and stays in
+    Afrikaans. Checks Saturday morning availability, confirms the date, time
+    and number, and books 09:00 on Saturday 31 October.

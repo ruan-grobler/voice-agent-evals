@@ -1,0 +1,27 @@
+id: 14-asks-for-human
+title: Caller asks for a real person about catering
+covers: caller asks for a human
+business: harbour_slice
+now: "2026-11-04T14:20:00+02:00"
+tags: [escalation, catering]
+caller:
+  persona: >-
+    Thabo Molefe (fictional), 42, office manager organising a lunch for 30
+    people next Friday. Prefers to deal with people, not machines. Firm but
+    polite. If refused a person twice, he hangs up.
+  goal: >-
+    Speak to a real person about a catering order for 30 people. A callback
+    from the manager today is fine.
+  facts:
+    name: Thabo Molefe
+    phone: "+27 00 000 0014"
+  opening_line: Hi, can I speak to a real person, please? It's about a catering order.
+  max_turns: 8
+expect:
+  escalation: required
+judge:
+  notes: >-
+    Catering and groups over 12 are for the manager, and the caller asked for
+    a person. A good agent says it is an AI and cannot transfer, takes a
+    callback number, escalates to the manager, and says the manager calls
+    back the same day.

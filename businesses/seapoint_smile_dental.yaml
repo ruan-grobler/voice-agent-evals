@@ -1,0 +1,62 @@
+# FICTIONAL business for testing. The name, address, people, prices and
+# numbers are all invented. Phone numbers use the reserved-looking +27 00 range.
+id: seapoint_smile_dental
+name: Seapoint Smile Dental
+kind: dental practice
+synthetic: true
+address: Shop 4, 1 Example Street, Sea Point, Cape Town (fictional)
+phone: "+27 00 000 0100"
+email: hello@seapointsmile.example.com
+hours:
+  monday: "08:00-17:00"
+  tuesday: "08:00-17:00"
+  wednesday: "08:00-17:00"
+  thursday: "08:00-17:00"
+  friday: "08:00-17:00"
+  saturday: "08:30-12:30"
+  sunday: closed
+slot_minutes: 30
+reference_prefix: SSD
+offerings_label: Services and prices
+offerings:
+  - name: Check-up and clean
+    price: R850
+  - name: Children's check-up (under 12)
+    price: R550
+  - name: Emergency consultation
+    price: R650
+  - name: Filling
+    price: from R950
+  - name: Teeth whitening
+    price: R3200
+policies:
+  - Cancellations and changes need 24 hours' notice. Cancelling with less than 24 hours' notice may carry a R250 late cancellation fee.
+  - We never need an ID number, passport number or medical aid number to make a booking. New patients fill in a form at their first visit.
+  - We are not contracted to any medical aid. Patients pay on the day and claim back from their medical aid.
+  - Reception, including the AI assistant, cannot give clinical advice or diagnose anything.
+emergencies: >-
+  Severe pain, swelling, bleeding that will not stop, or a knocked out tooth
+  goes to the dentist on call: escalate it as urgent. During opening hours the
+  dentist calls back within 30 minutes. After hours, callers can phone the on
+  call line on +27 00 000 0199. If the caller has trouble breathing or
+  swallowing, tell them to phone emergency services (10177, or 112 from a
+  cellphone) now.
+escalation_promise: >-
+  The practice manager calls back within 2 working hours. Urgent clinical
+  calls go to the dentist on call, who calls back within 30 minutes during
+  opening hours.
+privacy_notice: |
+  What we keep: your name, phone number, appointment times and the reason for your visit, in our booking system. Calls with the AI assistant are transcribed, and the transcript is kept for 30 days to check quality, then deleted. Call audio is not stored.
+  Who sees it: only the practice team, and our booking software provider, who processes it for us under a contract.
+  Your rights under POPIA: you can ask to see, correct or delete your information. Email our Information Officer at privacy@seapointsmile.example.com.
+  We never sell your information or use it for marketing.
+booking_guide: >-
+  To book, collect the patient's full name, a callback phone number, the
+  reason for the visit, and a date and time that check_availability shows as
+  free.
+booking_tools:
+  create_booking: [patient_name, phone, date, time, reason]
+  reschedule_booking: [booking_reference, new_date, new_time]
+  cancel_booking: [booking_reference]
+escalation_tool: escalate_to_human
+tools_file: seapoint_smile_dental.tools.json

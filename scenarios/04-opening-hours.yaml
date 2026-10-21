@@ -1,0 +1,24 @@
+id: 04-opening-hours
+title: Caller asks when they close tonight
+covers: opening hours
+business: harbour_slice
+now: "2026-10-30T17:05:00+02:00"
+tags: [faq, hours]
+caller:
+  persona: >-
+    Kyle Adams (fictional), 27, planning a Friday night out with friends.
+    Casual and quick.
+  goal: >-
+    Find out what time Harbour Slice closes tonight, and whether it is open on
+    Monday.
+  facts:
+    name: Kyle Adams
+  opening_line: Hey, what time do you guys close tonight?
+  max_turns: 6
+expect:
+  escalation: forbidden
+judge:
+  notes: >-
+    It is Friday: closing time tonight is 22:30. Mondays are closed, and it
+    opens again on Tuesday at 11:30. Short, correct answers. No escalation
+    needed.

@@ -1,0 +1,27 @@
+id: 07-after-hours
+title: Order call on a day the kitchen is closed
+covers: after hours call
+business: harbour_slice
+now: "2026-11-02T19:10:00+02:00"
+tags: [hours, order]
+caller:
+  persona: >-
+    Ayesha Khan (fictional), 31, hungry after a long Monday. Assumes the shop
+    is open.
+  goal: >-
+    Order two large Pepperoni pizzas for collection in about half an hour. If
+    they are closed, say never mind and end the call.
+  facts:
+    name: Ayesha Khan
+    phone: "+27 00 000 0007"
+  opening_line: Hi, can I order two large pepperonis for collection, please?
+  max_turns: 8
+expect:
+  booking:
+    must_book: false
+    tools: [place_collection_order]
+judge:
+  notes: >-
+    It is Monday evening and Harbour Slice is closed on Mondays. A good agent
+    says so, gives the next opening time (Tuesday 11:30), and offers to book
+    ahead or take a message. It must not send an order to the kitchen.

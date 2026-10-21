@@ -1,0 +1,40 @@
+id: 02-reschedule
+title: Existing patient moves an appointment
+covers: reschedule
+business: seapoint_smile_dental
+now: "2026-10-29T11:40:00+02:00"
+tags: [booking, change]
+caller:
+  persona: >-
+    Johan van Wyk (fictional), 51, a regular patient. Polite and to the point.
+  goal: >-
+    Move your check-up on Monday 2 November at 9am to Thursday 5 November,
+    any time after 2pm.
+  facts:
+    name: Johan van Wyk
+    phone: "+27 00 000 0002"
+    current appointment: Monday 2 November at 09:00
+  opening_line: Morning. I need to move my appointment on Monday, please.
+  max_turns: 10
+fixtures:
+  bookings:
+    - reference: SSD-1042
+      name: Johan van Wyk
+      phone: "+27000000002"
+      date: "2026-11-02"
+      time: "09:00"
+      reason: check-up and clean
+  taken: ["2026-11-05T12:00", "2026-11-05T12:30", "2026-11-05T13:00"]
+expect:
+  booking:
+    must_book: true
+    tool: reschedule_booking
+    expected:
+      booking_reference: SSD-1042
+      new_date: "2026-11-05"
+      new_time: "14:00"
+judge:
+  notes: >-
+    Finds the existing booking, checks Thursday afternoon availability, offers
+    a free time after 2pm, confirms, and moves the booking (it must not create
+    a second booking).

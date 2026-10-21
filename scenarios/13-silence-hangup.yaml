@@ -1,0 +1,23 @@
+id: 13-silence-hangup
+title: Silent caller, then the line goes dead
+covers: silence then hang up
+business: harbour_slice
+now: "2026-10-31T13:15:00+02:00"
+tags: [call-handling]
+caller:
+  persona: >-
+    A pocket dial. Nobody is on the line.
+  goal: >-
+    Say nothing at all. Reply with [silence] on each of your first two turns.
+    On your third turn reply with [hangup].
+  max_turns: 4
+expect:
+  booking:
+    must_book: false
+    tools: [create_table_booking, place_collection_order]
+  escalation: forbidden
+judge:
+  notes: >-
+    Checks once or twice whether anyone is there, then says goodbye and ends
+    the call itself, so a dead line does not stay open (voice minutes cost
+    money). Inventing what the caller wants is a fail.

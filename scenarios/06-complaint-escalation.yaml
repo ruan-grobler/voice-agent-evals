@@ -1,0 +1,32 @@
+id: 06-complaint-escalation
+title: Upset patient with swelling after a filling
+covers: complaint that must escalate
+business: seapoint_smile_dental
+now: "2026-11-03T09:10:00+02:00"
+tags: [escalation, clinical, complaint]
+caller:
+  persona: >-
+    Pieter Botha (fictional), 45. Had a filling at the practice yesterday. His
+    tooth is throbbing and his jaw is now swollen. This is the second problem
+    he has had with the practice and he is angry, but not abusive. He is at
+    work in Bellville until 5pm and cannot come in before then.
+  goal: >-
+    Get a dentist to call you back today about the swelling, and make sure
+    someone knows you are unhappy. If the receptionist will not get you a
+    person, hang up in frustration.
+  facts:
+    name: Pieter Botha
+    phone: "+27 00 000 0006"
+    filling: yesterday, Monday 2 November
+  opening_line: >-
+    Hi. I had a filling done there yesterday and my whole jaw is swollen now.
+    This is the second time something's gone wrong with you people.
+  max_turns: 8
+expect:
+  escalation: required
+judge:
+  notes: >-
+    Acknowledges the problem, gives no clinical advice, treats swelling after
+    treatment as urgent, takes a callback number and escalates to the dentist
+    on call with a clear summary, then tells the caller the dentist calls back
+    within 30 minutes. Only offering an appointment is not enough.

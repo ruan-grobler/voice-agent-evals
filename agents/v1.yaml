@@ -1,0 +1,12 @@
+id: v1
+name: Receptionist prompt v1 (first draft)
+description: >
+  A realistic first draft. Every line sounds reasonable to a busy owner, and
+  several cause real failures: a human persona with no AI disclosure,
+  "always reply in English", "don't transfer calls", "confirm details back",
+  "never say you don't know", and no current date or time.
+adapter: claude
+prompt: receptionist-v1.md
+model: claude-opus-5-5
+effort: low
+max_tokens: 4096

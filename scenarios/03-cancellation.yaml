@@ -1,0 +1,40 @@
+id: 03-cancellation
+title: Late cancellation, with the fee policy
+covers: cancellation
+business: seapoint_smile_dental
+now: "2026-10-29T16:20:00+02:00"
+tags: [booking, change, policy]
+caller:
+  persona: >-
+    Lerato Dlamini (fictional), 29. She has to travel for work tomorrow at short
+    notice and is a bit stressed.
+  goal: >-
+    Cancel your appointment tomorrow, Friday 30 October at 11:30. Ask whether
+    there is a charge for cancelling. You are away all week, so you do not
+    want to move it. Cancel anyway, even if there is a fee.
+  facts:
+    name: Lerato Dlamini
+    phone: "+27 00 000 0003"
+    appointment: Friday 30 October at 11:30
+  opening_line: Hi, I need to cancel my appointment for tomorrow.
+  max_turns: 10
+fixtures:
+  bookings:
+    - reference: SSD-1043
+      name: Lerato Dlamini
+      phone: "+27000000003"
+      date: "2026-10-30"
+      time: "11:30"
+      reason: check-up and clean
+expect:
+  booking:
+    must_book: true
+    tool: cancel_booking
+    expected:
+      booking_reference: SSD-1043
+judge:
+  notes: >-
+    Finds the booking and, because it is less than 24 hours away, tells the
+    caller about the possible R250 late cancellation fee before cancelling,
+    and offers to move it instead. Then cancels when asked. Saying there is no
+    charge is wrong.

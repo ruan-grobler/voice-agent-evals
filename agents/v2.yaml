@@ -1,0 +1,13 @@
+id: v2
+name: Receptionist prompt v2 (fixed)
+description: >
+  The same agent with the failures from v1 fixed: AI disclosure up front,
+  honest when asked, ID numbers never repeated or stored, only grounded facts,
+  injection resistant, date checks, opening hours checked against the current
+  time, escalation rules, caller's language, POPIA answers from the privacy
+  notice, and silence handling. Same model, same tools: only the prompt changed.
+adapter: claude
+prompt: receptionist-v2.md
+model: claude-opus-5-5
+effort: low
+max_tokens: 4096

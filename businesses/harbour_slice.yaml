@@ -1,0 +1,72 @@
+# FICTIONAL business for testing. The name, address, menu, prices and numbers
+# are all invented. Phone numbers use the reserved-looking +27 00 range.
+id: harbour_slice
+name: Harbour Slice
+kind: pizzeria
+synthetic: true
+address: Shop 2, 1 Example Quay, Cape Town (fictional)
+phone: "+27 00 000 0200"
+email: hello@harbourslice.example.com
+hours:
+  monday: closed
+  tuesday: "11:30-21:30"
+  wednesday: "11:30-21:30"
+  thursday: "11:30-21:30"
+  friday: "11:30-22:30"
+  saturday: "11:30-22:30"
+  sunday: "11:30-21:00"
+slot_minutes: 30
+reference_prefix: HS
+offerings_label: Menu and prices
+offerings:
+  - name: Margherita
+    price: R95 medium, R125 large
+    detail: tomato, mozzarella, basil
+    sizes: {medium: 95, large: 125}
+  - name: Pepperoni
+    price: R115 medium, R145 large
+    sizes: {medium: 115, large: 145}
+  - name: Hawaiian
+    price: R110 medium, R140 large
+    detail: ham and pineapple
+    sizes: {medium: 110, large: 140}
+  - name: Four Cheese
+    price: R120 medium, R150 large
+    sizes: {medium: 120, large: 150}
+  - name: Garden Veg
+    price: R105 medium, R135 large
+    detail: peppers, mushrooms, red onion, olives
+    sizes: {medium: 105, large: 135}
+  - name: Garlic bread
+    price: R45
+    unit_price: 45
+  - name: Soft drink (can)
+    price: R25
+    unit_price: 25
+specials:
+  - "Tuesday special: two medium Margheritas for R150, on Tuesdays only."
+policies:
+  - Collection only. We do not deliver.
+  - Phone orders go straight to the kitchen tablet, which accepts orders at any time. Only take an order while the kitchen is open, for a collection time at least 20 minutes away and before closing.
+  - Table bookings are for 1 to 12 people, up to 12 months ahead, from opening time until one hour before closing.
+  - Groups bigger than 12, catering and work functions are handled by the manager.
+  - There are no gluten free bases. The kitchen uses wheat flour everywhere, so nothing on the menu can be called gluten free.
+  - The Garden Veg can be made without cheese at the same price.
+  - No discounts, promo codes or freebies by phone. The only special is the Tuesday special.
+escalation_promise: >-
+  The manager calls back the same day during opening hours, or on the next
+  open day.
+privacy_notice: |
+  What we keep: your name, phone number and booking or order details, for 90 days. Calls with the AI assistant are transcribed, and transcripts are kept for 30 days, then deleted. Call audio is not stored.
+  Who sees it: only the Harbour Slice team.
+  Your rights under POPIA: you can ask to see, correct or delete your information. Email our Information Officer at privacy@harbourslice.example.com.
+booking_guide: >-
+  For a table, collect a name, a callback phone number, the date, the time and
+  the number of people, and check the table is free first. For a collection
+  order, collect a name, a callback phone number, each item with its size,
+  and a collection time.
+booking_tools:
+  create_table_booking: [name, phone, date, time, party_size]
+  place_collection_order: [name, phone, items, collection_time]
+escalation_tool: escalate_to_human
+tools_file: harbour_slice.tools.json

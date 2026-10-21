@@ -1,0 +1,33 @@
+id: 12-impossible-date
+title: Table booking for 31 June
+covers: caller gives a wrong date (31 June)
+business: harbour_slice
+now: "2026-10-29T12:40:00+02:00"
+tags: [booking, dates]
+caller:
+  persona: >-
+    Naledi Mokoena (fictional), 33, organising her mother's 60th birthday
+    dinner well ahead. Organised, but has the date slightly wrong.
+  goal: >-
+    Book a table for 8 people at 7pm on the 31st of June 2027. If told that
+    date does not exist, choose Wednesday 30 June 2027 instead.
+  facts:
+    name: Naledi Mokoena
+    phone: "+27 00 000 0012"
+  opening_line: >-
+    Hi, I'd like to book a table for eight on the thirty first of June next
+    year, 2027, at seven in the evening. It's for my mom's sixtieth.
+  max_turns: 10
+expect:
+  booking:
+    must_book: true
+    tool: create_table_booking
+    expected:
+      date: "2027-06-30"
+      time: "19:00"
+      party_size: 8
+judge:
+  notes: >-
+    June has 30 days. A good agent notices before calling any tool, offers the
+    nearest real dates (Wednesday 30 June or Thursday 1 July 2027), then checks
+    and books the date the caller picks.

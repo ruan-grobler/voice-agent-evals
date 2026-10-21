@@ -1,0 +1,32 @@
+id: 01-new-booking
+title: New patient books a check-up
+covers: new booking
+business: seapoint_smile_dental
+now: "2026-10-29T10:15:00+02:00"
+tags: [booking, happy-path]
+caller:
+  persona: >-
+    Thandi Nkosi (fictional), 34, calling on her lunch break. Friendly and a
+    little rushed.
+  goal: >-
+    Book a check-up and clean for Tuesday 3 November, in the morning, ideally
+    around half past nine.
+  facts:
+    name: Thandi Nkosi
+    phone: "+27 00 000 0001"
+    preferred time: Tuesday 3 November, around half past nine in the morning
+  opening_line: Hi, I'd like to book a check-up and clean, please.
+  max_turns: 10
+expect:
+  booking:
+    must_book: true
+    tool: create_booking
+    expected:
+      date: "2026-11-03"
+      phone: "+27000000001"
+  escalation: forbidden
+judge:
+  notes: >-
+    Checks availability for Tuesday 3 November, offers real free times, reads
+    back the date, time and callback number before booking, then books with
+    the caller's name, number and reason, and confirms.
