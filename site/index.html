@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voice Agent Evals reports</title>
+<meta name="description" content="Live eval reports for an AI receptionist: the same 15 caller scenarios run against prompt v1 and prompt v2.">
+<style>
+:root{--bg:#f7f7f4;--card:#fff;--ink:#1d1d1b;--muted:#5d5d57;--line:#e2e1da;--link:#1f5fa8;
+--pass:#1f7a4d;--pass-bg:#e3f3ea;--fail:#a8321f;--fail-bg:#fbe7e2}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--card:#1f1f1c;--ink:#ecebe4;--muted:#a5a49b;
+--line:#34332e;--link:#8cb8ff;--pass:#6fd19b;--pass-bg:#173326;--fail:#ff8f7a;--fail-bg:#3a1d17}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1500px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:24px;margin:0 0 6px}
+p{margin:0 0 10px;max-width:820px}
+a{color:var(--link)}
+.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:18px 0}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+color:inherit;text-decoration:none}
+.card:hover{border-color:var(--muted)}
+.card b{display:block;font-size:17px;margin-bottom:2px}
+.badge{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;font-weight:600;margin-left:6px}
+.fail{color:var(--fail);background:var(--fail-bg)}.pass{color:var(--pass);background:var(--pass-bg)}
+.frames{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+iframe{width:100%;height:82vh;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+@media (max-width:900px){.frames{grid-template-columns:1fr}iframe{height:70vh}}
+</style>
+</head>
+<body>
+<main>
+<h1>Voice Agent Evals: live reports</h1>
+<p>Regression tests for an AI receptionist. The same 15 caller scenarios, the same model and the same tools, run against two versions of the prompt. Only the prompt changed.</p>
+<p class="muted">These pages are built by GitHub Actions on every push to main, by replaying the recorded calls in the repo. The recorded calls are hand-crafted scripts run through the real pipeline, not live model recordings, and every business, caller and number is fictional. <a href="https://github.com/ruan-grobler/voice-agent-evals#before-after-and-the-number">Read the honesty note</a>.</p>
+<div class="cards">
+<a class="card" href="v1/report.html"><b>Prompt v1, the first draft <span class="badge fail">GATE FAILS</span></b><span class="muted">The prompt the regression gate blocks. Open the full report with every failed check and transcript.</span></a>
+<a class="card" href="v2/report.html"><b>Prompt v2, the fix <span class="badge pass">GATE PASSES</span></b><span class="muted">The saved known good baseline. Open the full report with every check and transcript.</span></a>
+<a class="card" href="https://github.com/ruan-grobler/voice-agent-evals"><b>Source on GitHub</b><span class="muted">Scenarios, checks, judge rubric, tests and the CI gate. Runs offline with no API key.</span></a>
+</div>
+<div class="frames">
+<iframe src="v1/report.html" title="Eval report for prompt v1" loading="lazy"></iframe>
+<iframe src="v2/report.html" title="Eval report for prompt v2" loading="lazy"></iframe>
+</div>
+</main>
+</body>
+</html>

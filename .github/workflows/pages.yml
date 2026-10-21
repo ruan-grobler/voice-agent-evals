@@ -1,0 +1,60 @@
+# Publishes the v1 and v2 HTML eval reports to GitHub Pages on every push to main.
+# The reports are rebuilt here from the committed cassettes (replay mode), so the
+# live pages always match the code. No secrets and no network calls to a model.
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: python -m pip install -e .
+
+      - name: Replay v1 and v2 and write the reports
+        run: vae demo
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site/v1 _site/v2
+          cp site/index.html _site/index.html
+          cp reports/v1/report.html _site/v1/report.html
+          cp reports/v2/report.html _site/v2/report.html
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "voice-agent-evals"
-version = "0.1.0"
+version = "1.0.0"
 description = "Regression tests for AI receptionists: run realistic caller scenarios against a voice agent prompt before it goes live."
 readme = "README.md"
 requires-python = ">=3.12"

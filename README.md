@@ -2,6 +2,32 @@
 
 Before a prompt change goes live, run 15 realistic caller scenarios against your AI receptionist and get a pass or fail report, so regressions are caught before a customer hears them.
 
+[![CI](https://github.com/ruan-grobler/voice-agent-evals/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ruan-grobler/voice-agent-evals/actions/workflows/ci.yml)
+[![Live report](https://img.shields.io/badge/live%20report-GitHub%20Pages-1f7a4d)](https://ruan-grobler.github.io/voice-agent-evals/)
+![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
+![mypy strict](https://img.shields.io/badge/mypy-strict-2A6DB2)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**The result.** Same 15 calls, same model, same tools. Only the prompt changed. The first draft passes 0 of 15 scenarios and the CI gate blocks it on 30 failed checks. The fixed prompt passes 15 of 15. The calls are hand-crafted scripts replayed through the real pipeline, not live model recordings ([honesty note](#before-after-and-the-number)).
+
+**[See the live report](https://ruan-grobler.github.io/voice-agent-evals/)**, rebuilt by CI on every push.
+
+![Two eval reports side by side. Prompt v1: 0 of 15 scenarios and 39 of 69 checks passed, with ai_disclosure at 0 percent. Prompt v2: 15 of 15 scenarios and 70 of 70 checks passed.](docs/images/report-v1-vs-v2.png)
+
+<sub>The real HTML reports written by `make demo` (`reports/v1` and `reports/v2`), captured side by side with Playwright.</sub>
+
+## Quickstart
+
+Needs Python 3.12. After the install, the demo needs no API key and no network.
+
+```bash
+git clone https://github.com/ruan-grobler/voice-agent-evals.git && cd voice-agent-evals
+make install   # Python 3.12 venv with the package and dev tools
+make demo      # replays v1 and v2, compares them, runs the gate
+```
+
+Then open `reports/v1/report.html` and `reports/v2/report.html`.
+
 ## The business problem
 
 An AI receptionist's prompt is code that talks to your customers. A small edit can quietly break it.
@@ -66,16 +92,6 @@ flowchart LR
 - **Scenarios** live in [scenarios/](scenarios/): 15 YAML files, 8 for a fictional dental practice (Seapoint Smile Dental) and 7 for a fictional pizzeria (Harbour Slice).
 - **The agent under test** is a prompt template plus model settings in [agents/](agents/), filled in with a business profile from [businesses/](businesses/), with its tool schemas.
 - **Every model call** (agent, caller, judge) goes through one `LLMClient` seam. Replay serves answers from cassettes, record calls the API and saves them, live just calls the API.
-
-## Quickstart
-
-```bash
-git clone <this repo> && cd voice-agent-evals
-make install   # Python 3.12 venv with the package and dev tools
-make demo      # replays v1 and v2, compares them, runs the gate. No key, no network.
-```
-
-Then open `reports/v1/report.html` and `reports/v2/report.html`.
 
 ## What gets checked
 
@@ -180,7 +196,7 @@ TOTAL                                       2391     37    584     25    98%
 172 passed in 19.96s
 ```
 
-CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint (ruff), typecheck (mypy strict), the tests with coverage, `vae craft --check` and the regression gate. It needs no secrets.
+CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint (ruff), typecheck (mypy strict), the tests with coverage, `vae craft --check` and the regression gate. It needs no secrets. A second workflow ([.github/workflows/pages.yml](.github/workflows/pages.yml)) replays both versions and publishes the two HTML reports to [GitHub Pages](https://ruan-grobler.github.io/voice-agent-evals/).
 
 ## Stack
 
@@ -204,7 +220,8 @@ CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint (ruff), type
 | `baselines/v2.json` | The saved known good run the gate compares against |
 | `calibration/` | Known bad calls and the blind grading pass |
 | `src/voice_agent_evals/` | The runner, adapters, checks, judge, reports and CLI (`vae`) |
-| `docs/` | Demo output, judge calibration, the Retell adapter |
+| `docs/` | Demo output, judge calibration, the Retell adapter, README images |
+| `site/` | The GitHub Pages landing page. CI adds the two reports next to it |
 
 ## What I would do next
 
