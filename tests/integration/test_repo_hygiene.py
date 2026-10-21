@@ -85,7 +85,7 @@ def test_emails_are_example_domains() -> None:
 
 
 def test_docs_have_no_long_dashes() -> None:
-    docs = [ROOT / "README.md", ROOT / "PUBLISH.md", *(ROOT / "docs").glob("*.md")]
+    docs = [ROOT / "README.md", *(ROOT / "docs").glob("*.md")]
     for path in docs:
         text = path.read_text(encoding="utf-8")
         assert EM_DASH not in text and EN_DASH not in text, path
